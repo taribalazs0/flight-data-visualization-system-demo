@@ -20,7 +20,7 @@ app.use(express.json());
 // enabling cors for frontend
 const io = new Server(server, {
     cors: {
-        origin: "-", // exact url of frontend
+        origin: "*", // exact url of frontend
         methods: ["GET", "POST"]
     }
 });
@@ -36,7 +36,7 @@ io.on('connection', (socket) => {
 
 // connecting routes
 const telemetryRoute = require('./telemetryRoute')(io);
-app.use('./api/telemetry', telemetryRoute);
+app.use('/api/telemetry', telemetryRoute);
 
 // Lets start the server!
 

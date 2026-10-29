@@ -14,10 +14,10 @@ module.exports = (io) => {
         // 2. Express intercepts it
         // 3. parses the JSON
         // 4. attaches it to req.body
-        const telemtryData = req.body;
+        const telemetryData = req.body;
         
         // saving to database
-        insertTelemetry(telemtryData, (err, insertId) => {
+        insertTelemetry(telemetryData, (err, insertId) => {
             if(err) {
                 console.error("DATABASE ERROR: ", err);
                 return res.status(500).json({
