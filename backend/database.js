@@ -18,7 +18,7 @@ database.serialize(() => {
             id TEXT,
             sequence INTEGER,
             timestamp TEXT,
-            temperate REAL,
+            temperature REAL,
             voltage REAL,
             altitude REAl,
             rsii INTEGER,
@@ -30,8 +30,8 @@ database.serialize(() => {
 // Saving data
 
 const insertTelemetry = (data, callback) => {
-    const statemet = database.prepare(`
-        INSERT INTO telemetry (id, sequence, timestamp, temperature, voltage, altitude, rssi, status)
+    const statement = database.prepare(`
+        INSERT INTO telemetry (id, sequence, timestamp, temperature, voltage, altitude, rsii, status)
         VALUES (?, ?, ?, ?, ?, ?, ?, ?) 
         `); // ? : placeholders
 
@@ -43,17 +43,16 @@ const insertTelemetry = (data, callback) => {
         // finishes attempting to insert our data
 
         // if(callback) checks if we provided a follow up function
-        function(arr) { if (callback) callback(err), this.lastID; }
+        function(err) { if (callback) callback(err, this.lastID); }
     );
 
     // frees up sys memory and database resources allocated to our INSERT command
     // we have to explicitly tell SQLite to prevent memory leaks (because we used databse.prepare())
     statement.finalize();
-
+};
 
     // exporting database and insertTelemetry()
 module.exports = {
     database,
     insertTelemetry
 };
-}
