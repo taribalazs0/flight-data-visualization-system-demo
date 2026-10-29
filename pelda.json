@@ -1,0 +1,10 @@
+{
+    "id": "c1f3f4a5-1d4c-4d7b-8c3e-2b4a6f5e7d8c",   
+    "sequence": 1,                                  
+    "timestamp": "2026-10-03T12:00:00+00:00",
+    "temperature": 21.34,
+    "voltage": 12.08,
+    "altitude": 123.7,
+    "rssi":-61,
+    "status": "ok"
+}
