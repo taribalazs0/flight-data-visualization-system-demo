@@ -11,8 +11,8 @@ const database = new sqlite3.Database('telemetry.db');
 
 // Creating table, if it does not exist yet
 
-db.serialize(() => {
-    db.run(`
+database.serialize(() => {
+    database.run(`
         CREATE TABLE IF NOT EXISTS telemetry (
             db_id INTEGER PRIMARY KEY AUTOINCREMENT,
             id TEXT,

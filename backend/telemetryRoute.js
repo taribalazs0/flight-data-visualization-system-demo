@@ -3,7 +3,7 @@
 // sends out connected WebSocket to client
 
 const express = require('express');
-const { insertTelemetry } = reqire('./database')
+const { insertTelemetry } = require('./database')
 
 module.exports = (io) => {
     const router = express.Router();
