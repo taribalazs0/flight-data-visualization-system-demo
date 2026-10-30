@@ -46,9 +46,6 @@ To see data arrive, run the simulator from the workspace root:
 
     python telemetry_sender.py
 
-Stop it with Ctrl+C. A short run:
-
-    python telemetry_sender.py --count 10 --interval 0.5
 
 ## Communication
 
