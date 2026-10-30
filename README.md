@@ -2,7 +2,7 @@
 
 An interactive full-stack web-application built for BME Suborbitals Ground Support team.
 
-## Problems sovled
+## Problems solved
 
 > visualizing telemetry data coming from rockets on diagrams and map.
 > saving telemetry data into a database.
@@ -17,6 +17,23 @@ An interactive full-stack web-application built for BME Suborbitals Ground Suppo
 
 npm init -y
 npm install express cors socket.io sqlite3
+
+2. install React types (if missing)
+
+npm install -D @types/react @types/react-dom
+
+3. generate the vite react-typescript architecture
+
+npm create vite@latest frontend -- --template react-ts
+
+4. start the server
+
+cd backend
+node server.js
+
+5. switch to browser: http://localhost:3000
+
+
 
 ## How to use it
 
