@@ -35,9 +35,10 @@ const insertTelemetry = (data, callback) => {
         VALUES (?, ?, ?, ?, ?, ?, ?, ?) 
         `); // ? : placeholders
 
+    // The table column is named rsii; packets use rssi.
     statement.run(
         data.id, data.sequence, data.timestamp, data.temperature,
-        data.voltage, data.altitude, data.rsii, data.status,
+        data.voltage, data.altitude, data.rssi ?? data.rsii ?? null, data.status,
 
         // Callback function which runs immediately after the database
         // finishes attempting to insert our data
